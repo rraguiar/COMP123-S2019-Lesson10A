@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace COMP123_S2019_Lesson10A
 {
-    public partial class Form1 : Form
+    public partial class StartForm : Form
     {
-        public Form1()
+        public Form parent { get; set; }
+
+        public StartForm()
         {
             InitializeComponent();
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            Program.Forms[FormName.MAIN_FORM].Show();
+            this.Hide();
         }
     }
 }
